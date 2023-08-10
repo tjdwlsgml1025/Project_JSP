@@ -105,11 +105,9 @@
 }
 </style>
 </head>
-<body
-	class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
-	<header>
-		<%@ include file="nav.jsp"%>
-
+<body>
+<header>	
+<%@ include file="/golf_jsp/nav.jsp"%>
 	</header>
 	
 	<div class="section-bg"></div>
@@ -117,7 +115,7 @@
 	<section class="d-flex flex-column align-items-center">
 		<h1>회원 목록조회/수정</h1>
 		<br>
-			<table class="insertBox" style="width: 700px;">
+			<table class="table table-striped table-hover">
 			<tr>
 				<td>회원번호</td>
 				<td>회원성명</td>
@@ -151,8 +149,11 @@
 		</table>
 	</section>
 
-	<footer class="align-bottom p-4">
+	<!-- <footer class="align-bottom p-4">
 		<p>ⓒ AliceSeo 2023</p>
+	</footer> -->
+	<footer>
+	<%@ include file="/golf_jsp/footer.jsp"%>
 	</footer>
 </body>
 </html>

@@ -30,7 +30,7 @@ footer {
 <body
 	class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
 
-	<%@ include file="nav.jsp"%>
+	<%@ include file="/golf_jsp/nav.jsp"%>
 
 	<main>
 		<div id="homepage">
@@ -40,13 +40,11 @@ footer {
 
 					<div class="golf" style="width: 18rem;">
 						<img id="golfImg" class="card-img-top"
-							src="jsp_teamproject_img/golf1.png">
+							src="golf_jsp/jsp_teamproject_img/golf1.png">
 						<div class="card-body">
-							<a href="golf_index.jsp" class="btn btn-success"> <i
+							<a href="/jsp_team_project/golf/member.do" class="btn btn-success"> <i
 								class="bi bi-hand-rock"></i> 골프
 							</a>
-
-
 
 
 						</div>
@@ -54,9 +52,9 @@ footer {
 
 					<div class="homeshopping" style="width: 18rem;">
 						<img id="homeshoppingImg" class="card-img-top"
-							src="jsp_teamproject_img/homeshoppin.jpg">
+							src="golf_jsp/jsp_teamproject_img/homeshoppin.jpg">
 						<div class="card-body">
-							<a href="index.jsp" class="btn btn-secondary"> <i
+							<a href="/jsp_team_project/hs/listViewMember.do" class="btn btn-secondary"> <i
 								class="bi bi-hand-rock"></i> 홈쇼핑
 							</a>
 
@@ -65,9 +63,9 @@ footer {
 
 					<div class="vote" style="width: 18rem;">
 						<img id="voteImg" class="card-img-top"
-							src="jsp_teamproject_img/vote.png">
+							src="golf_jsp/jsp_teamproject_img/vote.png">
 						<div class="card-body">
-							<a href="#" class="btn btn-primary"> <i
+							<a href="/jsp_team_project/vote/voteMaind.do" class="btn btn-primary"> <i
 								class="bi bi-hand-rock"></i> 투표
 							</a>
 
@@ -76,9 +74,9 @@ footer {
 
 					<div class="game" style="width: 18rem;">
 						<img id="gameImg" class="card-img-top"
-							src="jsp_teamproject_img/game.jpg">
+							src="golf_jsp/jsp_teamproject_img/game.jpg">
 						<div class="card-body">
-							<a href="#" class="btn btn-info"> <i class="bi bi-hand-rock"></i>
+							<a href="/jsp_team_project/game/Game_lotto.jsp" class="btn btn-info"> <i class="bi bi-hand-rock"></i>
 								게임
 							</a>
 
@@ -95,4 +93,4 @@ footer {
 
 	</main>
 
-	<footer> from @gigaginny </footer>
+	<footer> global-in-TeamProject1@2023  </footer>

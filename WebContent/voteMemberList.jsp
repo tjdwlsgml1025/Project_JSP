@@ -1,10 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.List"%>
-<%@ page import="jsp_team_project_golf_dto.Tbl_gmember_Dto"%>
-<%@ page import="jsp_team_project_golf_dao.Tbl_gmember_Dao"%>
-
+<%@ page import="java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +11,7 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <meta charset="UTF-8">
-<title>강사조회</title>
+<title>memberList</title>
 <style>
 .table-smaller {
 	max-width: 80%; /* Adjust the width as needed */
@@ -34,20 +31,6 @@
 
 .table {
 	margin-top: 10px;
-}
-
-.section-bg {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	opacity: 0.3; /* 흐림 효과 설정 */
-	filter: blur(5px); /* 흐림 효과 블러 적용 */
-	background: url('jsp_teamproject_img/golf2.jpg') no-repeat center center
-		fixed;
-	background-size: cover;
 }
 
 .title {
@@ -89,41 +72,36 @@
 </style>
 </head>
 <body>
-<header>
-	<%@ include file="nav.jsp"%>
+	<%@ include file="/golf_jsp/nav.jsp"%>
 
-</header>
-
+	<!--  	<%@ include file="votetopmenu.jsp"%>-->
 	<section>
-		<div class="section-bg"></div>
-
-		<div class="title">강사조회</div>
-		<div class="table-outer">
-			<div class="table-wrapper">
-				<table class="table table-striped table-hover">
+		<div class="title">후보조회</div>
+		<div class="table">
+			<table class="table table-striped table-hover">
+				<tr>
+					<th>후보번호</th>
+					<th>성명</th>
+					<th>소속정당</th>
+					<th>학력</th>
+					<th>주민번호</th>
+					<th>지역구</th>
+					<th>대표전화</th>
+				</tr>
+				<c:forEach var="dto" items="${voteMemberList}">
 					<tr>
-						<th>강사코드</th>
-						<th>강사명</th>
-						<th>강의명</th>
-						<th>수강료</th>
-						<th>강사자격취득일</th>
+						<td>${dto.m_no}</td>
+						<td>${dto.m_name}</td>
+						<td>${dto.p_name}</td>
+						<td>${dto.p_school}</td>
+						<td>${dto.m_ssnum}</td>
+						<td>${dto.m_city}</td>
+						<td>${dto.p_tel}</td>
 					</tr>
-
-					<c:forEach var="teacher" items="${teacherlist}">
-						<tr>
-							<td>${teacher.teacher_code}</td>
-							<td>${teacher.teacher_name}</td>
-							<td>${teacher.class_name}</td>
-							<td>${teacher.class_price}</td>
-							<td>${teacher.teacher_regist_date}</td>
-						</tr>
-					</c:forEach>
-
-
-				</table>
-			</div>
+				</c:forEach>
+			</table>
 		</div>
 	</section>
-	<%@ include file="footer.jsp"%>
+	<%@ include file="/golf_jsp/footer.jsp"%>
 </body>
 </html>

@@ -88,6 +88,10 @@ p {
 		<p>수강신청이 정상적으로 완료되었습니다.</p>
 		<div style="text-align: center;"></div>
 	</div>
+	<footer>
+	<%@ include file="footer.jsp"%>
+	</footer>
+	
 
 </body>
 </html>

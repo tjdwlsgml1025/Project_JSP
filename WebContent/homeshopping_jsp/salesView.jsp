@@ -18,7 +18,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
-<%@ include file="nav.jsp"%>
+
 <style>
 .wrapper {
 	display: flex;
@@ -106,16 +106,18 @@
 }
 </style>
 </head>
-<body
-	class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
+<header>
+	<%@ include file="/golf_jsp/nav.jsp"%>
+</header>
+<body>
 
 
 	<section class="d-flex flex-column align-items-center">
 		<div class="section-bg"></div>
 
-		<h1>회원매출조회</h1>
+		<div class="title">회원매출조회</div>
 		<br>
-		<table class="insertBox" style="width: 600px;">
+		<table class="table table-striped table-hover">
 			<tr>
 				<th>회원번호</th>
 				<th>회원성명</th>
@@ -138,7 +140,8 @@
 	</section>
 
 	<footer class="align-bottom p-4">
-		<p>ⓒ AliceSeo 2023</p>
+		<!-- <p>ⓒ AliceSeo 2023</p> -->
+		<%@ include file="/golf_jsp/footer.jsp"%>
 	</footer>
 </body>
 </html>

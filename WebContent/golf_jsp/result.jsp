@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List"%>
 <%@ page import="jsp_team_project_golf_dto.Tbl_teacher_Dto"%>
 <%@ page import="jsp_team_project_golf_dao.Tbl_teacher_Dao"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -87,6 +89,7 @@
 }
 </style>
 </head>
+
 <body>
 	
 	<%@ include file="nav.jsp"%>
@@ -133,4 +136,47 @@
 	</section>
 	<%@ include file="footer.jsp"%>
 </body>
+<%-- <body>
+
+	<%@ include file="nav.jsp"%>
+
+	<section>
+		<div class="section-bg"></div>
+
+		<div class="title">강사 매출 현황</div>
+		<div class="table-outer">
+
+			<div class="wrapper">
+				<div class="table-outer">
+					<table class="table table-striped table-hover">
+						<tr>
+							<th>강사코드</th>
+							<th>강사명</th>
+							<th>강의명</th>
+							<th>수강료</th>
+							<th>강사자격취득일</th>
+							<th>총 매출액</th>
+						</tr>
+						
+						<c:forEach var="teacher" items="${teacherlist}">
+							<%
+								Tbl_teacher_Dao teacherDao = new Tbl_teacher_Dao();
+								int totalSales = teacherDao.calculateTotalSales(teacher.getTeacher_code());
+							%>
+							<tr>
+								<td><c:out value="${teacher.teacher_code}" /></td>
+								<td><c:out value="${teacher.teacher_name}" /></td>
+								<td><c:out value="${teacher.class_name}" /></td>
+								<td><c:out value="${teacher.class_price}" /></td>
+								<td><c:out value="${teacher.teacher_regist_date}" /></td>
+								<td><c:out value="${totalSales}" /></td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<%@ include file="footer.jsp"%>
+</body> --%>
 </html>

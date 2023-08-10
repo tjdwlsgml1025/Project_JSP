@@ -17,12 +17,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
-</head>
-<body
-	class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
-	<header>
-		<%@ include file="nav.jsp"%>
-		<style>
+<style>
 .wrapper {
 	display: flex;
 	justify-content: center;
@@ -67,8 +62,7 @@
 	z-index: -1;
 	opacity: 0.3; /* 흐림 효과 설정 */
 	filter: blur(5px); /* 흐림 효과 블러 적용 */
-	background: url('mart.jpg') no-repeat center center
-		fixed;
+	background: url('mart.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
@@ -108,13 +102,30 @@
 .title:hover:after {
 	transform: translateX(5px);
 }
-</style>
-	</header>
 
+.section-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.3; /* 흐림 효과 설정 */
+	filter: blur(5px); /* 흐림 효과 블러 적용 */
+	background: url('/homeshopping_jsp/mart.jpg') no-repeat center center
+		fixed;
+	background-size: cover;
+}
+</style>
+</head>
+<header>
+	<%@ include file="/golf_jsp/nav.jsp"%>
+</header>
+<body>
+	<div class="section-bg"></div>
 	<section class="d-flex flex-column align-items-center">
-		<div class="section-bg"></div>
-	
-		<h1>쇼핑몰 회원등록</h1>
+
+		<div class="title">쇼핑몰 회원등록</div>
 		<br>
 		<form action="write.do" method="post">
 			<table class="insertBox" style="width: 600px;">
@@ -150,16 +161,26 @@
 					<td><input type="text" name="cityCode"></td>
 				</tr>
 				<tr>
-					<th colspan="2"><input type="submit" value="등록"> <input
-						type="button" value="조회" onclick="return moveList()"></th>
+					<th style="text-align: center;" colspan="2"><input
+						type="submit" value="등록"> <input type="button" value="조회"
+						onclick="return moveList()"></th>
 				</tr>
+
+				<!-- <tr>
+					<td style="text-align: center;" colspan="2">
+						<button class="btn" type="submit"
+							onclick="fn_submit(); return false;">등록</button>
+						<button class="btn" type="button" onclick="return moveList()">다시쓰기</button>
+					</td>
+				</tr> -->
 
 			</table>
 		</form>
 	</section>
 
 	<footer class="align-bottom p-4">
-		<p>ⓒ AliceSeo 2023</p>
+		<!-- <p>ⓒ AliceSeo 2023</p> -->
+		<%@ include file="/golf_jsp/footer.jsp"%>
 	</footer>
 </body>
 <script>

@@ -1,9 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%@ page import="java.util.List"%>
-<%@ page import="jsp_team_project_golf_dto.Tbl_gmember_Dto"%>
-<%@ page import="jsp_team_project_golf_dao.Tbl_gmember_Dao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +13,7 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <meta charset="UTF-8">
-<title>강사조회</title>
+<title>voteList</title>
 <style>
 .table-smaller {
 	max-width: 80%; /* Adjust the width as needed */
@@ -34,20 +33,6 @@
 
 .table {
 	margin-top: 10px;
-}
-
-.section-bg {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	opacity: 0.3; /* 흐림 효과 설정 */
-	filter: blur(5px); /* 흐림 효과 블러 적용 */
-	background: url('jsp_teamproject_img/golf2.jpg') no-repeat center center
-		fixed;
-	background-size: cover;
 }
 
 .title {
@@ -89,41 +74,37 @@
 </style>
 </head>
 <body>
-<header>
-	<%@ include file="nav.jsp"%>
-
-</header>
-
+<%@ include file="/golf_jsp/nav.jsp"%>
+<%-- 	<%@ include file="votetopmenu.jsp"%> --%>
 	<section>
-		<div class="section-bg"></div>
+		<div class="title">투표검수조회</div>
+		<div class="table">
+			<table class="table table-striped table-hover">
+				<tr>
+					<th>성명</th>
+					<th>생년월일</th>
+					<th>나이</th>
+					<th>성별</th>
+					<th>후보번호</th>
+					<th>투표시간</th>
+					<th>유권자확인</th>
+				</tr>
+				<c:forEach var="dto" items="${votelist}">
+			<tr>
+				<td>${dto.v_name}</td>
+				<td>${dto.v_ssnum}</td>
+				<td>${dto.v_age}</td>
+				<td>${dto.m_no}</td>
+				<td>${dto.v_gender}</td>
+				<td>${dto.v_time}</td>
+				<td>${dto.v_confirm}</td>
+			</tr>
+		</c:forEach>
+				
 
-		<div class="title">강사조회</div>
-		<div class="table-outer">
-			<div class="table-wrapper">
-				<table class="table table-striped table-hover">
-					<tr>
-						<th>강사코드</th>
-						<th>강사명</th>
-						<th>강의명</th>
-						<th>수강료</th>
-						<th>강사자격취득일</th>
-					</tr>
-
-					<c:forEach var="teacher" items="${teacherlist}">
-						<tr>
-							<td>${teacher.teacher_code}</td>
-							<td>${teacher.teacher_name}</td>
-							<td>${teacher.class_name}</td>
-							<td>${teacher.class_price}</td>
-							<td>${teacher.teacher_regist_date}</td>
-						</tr>
-					</c:forEach>
-
-
-				</table>
-			</div>
+			</table>
 		</div>
 	</section>
-	<%@ include file="footer.jsp"%>
+	<%@ include file="/golf_jsp/footer.jsp"%>
 </body>
 </html>

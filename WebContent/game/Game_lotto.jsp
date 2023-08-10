@@ -93,65 +93,9 @@
     class="d-flex vw-100 vh-100 text-center flex-column justify-content-between"
   >
     <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="totalhome.jsp">home</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-				aria-controls="navbarNavDropdown" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> golf </a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="golf_index.jsp">골프홈</a></li>
-							<li><a class="dropdown-item" href="teacher.jsp">강사조회</a></li>
-							<li><a class="dropdown-item" href="insert.jsp">수강신청</a></li>
-							<li><a class="dropdown-item" href="member.jsp">회원정보조회</a></li>
-							<li><a class="dropdown-item" href="result.jsp">강사매출현황</a></li>
-						</ul></li>
 
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> homeshopping
-					</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="golf_index.jsp">골프홈</a></li>
-							<li><a class="dropdown-item" href="teacher.jsp">강사조회</a></li>
-							<li><a class="dropdown-item" href="insert.jsp">수강신청</a></li>
-							<li><a class="dropdown-item" href="member.jsp">회원정보조회</a></li>
-							<li><a class="dropdown-item" href="result.jsp">강사매출현황</a></li>
-						</ul></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> vote </a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="golf_index.jsp">골프홈</a></li>
-							<li><a class="dropdown-item" href="teacher.jsp">강사조회</a></li>
-							<li><a class="dropdown-item" href="insert.jsp">수강신청</a></li>
-							<li><a class="dropdown-item" href="member.jsp">회원정보조회</a></li>
-							<li><a class="dropdown-item" href="result.jsp">강사매출현황</a></li>
-						</ul></li>
+	<%@ include file="/golf_jsp/nav.jsp"%>
 
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> game </a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="Game_rps.jsp">rsp</a></li>
-							<li><a class="dropdown-item" href="Game_rps.jsp">lotto</a></li>
-						</ul></li>
-				</ul>
-			</div>
-		</div>
-
-	</nav>
-    
-    
-    
     </header>
 
     <main>
